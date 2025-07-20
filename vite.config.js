@@ -1,6 +1,5 @@
 import { defineConfig } from "vite"
 
 export default defineConfig({
-  base: "/dum-newtab-v2/",
-  root: "./src"
+    base: "https://https://bebeepboopbot.github.io/dum-newtab-v2/",
 })
