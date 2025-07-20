@@ -1,0 +1,293 @@
+$step-0: clamp(1.125rem, 0.9481rem + 0.1887vw, 1.25rem);
+$step-1: clamp(1.35rem, 1.0493rem + 0.3208vw, 1.5625rem);
+$step-2: clamp(1.62rem, 1.1486rem + 0.5028vw, 1.9531rem);
+$step-3: clamp(1.944rem, 1.2401rem + 0.7508vw, 2.4414rem);
+$step-4: clamp(2.3328rem, 1.3154rem + 1.0852vw, 3.0518rem);
+$step-5: clamp(2.7994rem, 1.3626rem + 1.5326vw, 3.8147rem);
+$step-6: clamp(3.3592rem, 1.3652rem + 2.127vw, 4.7684rem);
+$step-7: clamp(4.0311rem, 1.3008rem + 2.9123vw, 5.9605rem);
+$fluid-8-12: clamp(0.5rem, 0.1462rem + 0.3774vw, 0.75rem);
+$fluid-16-24: clamp(1rem, 0.2925rem + 0.7547vw, 1.5rem);
+$fluid-32-48: clamp(2rem, 0.5849rem + 1.5094vw, 3rem);
+$fluid-48-72: clamp(3rem, 0.8774rem + 2.2642vw, 4.5rem);
+$fluid-200-300: clamp(12.5rem, 3.6557rem + 9.434vw, 18.75rem);
+// this is not the right way to do this but it works
+$padding-15-24: clamp(0.9375rem, 0.1415rem + 0.8491vw, 1.5rem);
+$padding-25-38: clamp(1.5625rem, 0.4127rem + 1.2264vw, 2.375rem);
+$padding-8-12: clamp(0.5rem, 0.1462rem + 0.3774vw, 0.75rem);
+$padding-9-14: clamp(0.5625rem, 0.1203rem + 0.4717vw, 0.875rem);
+$padding-5-8: clamp(0.3125rem, 0.0472rem + 0.283vw, 0.5rem);
+$padding-50-58: clamp(3.125rem, 2.4175rem + 0.7547vw, 3.625rem);
+$padding-450-600: clamp(28.125rem, 14.8585rem + 14.1509vw, 37.5rem);
+$padding-12-18: clamp(0.75rem, 0.2193rem + 0.566vw, 1.125rem);
+// colors
+$background: #24273a;
+$acent: #5b60787f;
+$text: #cad3f5;
+$red: #ed8796;
+$blue: #91d7e3;
+$green: #a6da95;
+$yellow: #eed49f;
+$pink: #f5bde6;
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+p {
+    font-size: $step-3;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: $step-3;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.1s ease-in-out;
+}
+
+a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.1s ease-in-out;
+}
+
+a:hover::before {
+    background: $text;
+    height: 4px;
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: $step-3;
+    font-weight: 600;
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+    border-radius: 12px;
+    object-fit: cover;
+    height: $fluid-200-300;
+    width: 100%;
+    position: relative;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: $background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    color: $text;
+}
+
+.dash {
+    position: relative;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    gap: $fluid-48-72;
+}
+
+.clock {
+    font-size: $step-7;
+    font-weight: 600;
+    padding: 16px 0 15px 0;
+    margin-left: 48px;
+}
+
+// links
+
+.links {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 $fluid-48-72;
+    grid-column: 1 / span 2;
+    margin: 0 $fluid-48-72;
+
+    li {
+        padding-bottom: $padding-5-8;
+        transition: all 0.1s ease-in-out;
+
+      &:hover {
+          transform: translateY(-4px);
+      }
+      
+      &:nth-last-child(1) a {
+          padding: 0;
+      }
+      
+      &:nth-child(1) {
+          padding-top: $padding-9-14;
+      }
+    }
+
+    h3 {
+        padding: $padding-25-38 0 $padding-8-12 0;
+    }
+
+    .cat {
+      padding-right: 32px;
+      text-wrap: nowrap;
+    }
+
+    .line {
+        width: calc(100% + 32px);
+        margin-inline: unset;
+        display: block;
+    }
+    
+    #li1 {color: $red;}
+    #li2 {color: $blue;}
+    #li3 {color: $green;}
+    #li4 {color: $yellow;}
+}
+
+.line {
+    background: $acent;
+    height: 4px;
+    border-radius: 2px;
+    margin-inline: 48px;
+    display: none;
+}
+
+
+.greet {
+    align-self: center;
+    line-height: 1;
+    font-weight: 600;
+}
+
+
+
+// media querys
+
+@media (max-width: 1100px) {
+  img {
+    display: none;
+  }
+
+  .links {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin-top: 16px;
+
+    .cat {
+      width: 224px;
+    }
+  }
+
+  .line {
+    display: block;
+  }
+
+  .clock {
+    font-size: 64px;
+  }
+
+  .greet {
+    display: none;
+  }
+}
+
+
+// search
+
+
+.search-box {
+    position: absolute;
+    backdrop-filter: blur(8px);
+    z-index: 100;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    input[type="text"] {
+      border: 2px solid $acent;
+      outline: none;
+      border-radius: 12px;
+      background: $background;
+      color: $text;
+      width: $padding-450-600;
+      height: $padding-50-58;
+      font-size: $step-2;
+      padding: 0 $fluid-16-24;
+      font-weight: 600;
+    }
+
+    input[type="text"]:focus {
+      border: 2px solid $pink;
+    }
+
+    .search {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: $fluid-8-12;
+      padding: $fluid-48-72;
+    } 
+
+    button {
+      height: $padding-50-58;
+      width: $padding-50-58;
+      background: $background;
+      border-radius: 12px;
+      border: 2px solid $acent;
+
+      &:hover {
+        border: 2px solid $pink;
+      }
+
+      svg {
+        fill: $text;
+        width: $step-2;
+      }
+    }
+}
+
+// key info at the bottom
+
+.keys {
+  position: absolute;
+  bottom: $fluid-16-24;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  p {
+    color: $acent;
+    font-weight: 600;
+    font-size: $step-2;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: $fluid-16-24;
+  }
+}
