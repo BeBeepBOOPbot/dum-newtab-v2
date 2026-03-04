@@ -24,13 +24,13 @@ export const config = {
         title: 'info',
         name: [ 
             'Anime', 
-            'ChatGPT',  // i sware i dont use it for codeing . . .   that much
+            'Claude', // f**k chatgpt, i refuse to be a part of something that could end up like Am
             'W3schools', 
             'Arch Linux'
         ],
         link: [
             'https://www.anime-planet.com/',
-            'https://chatgpt.com/',
+            'https://claude.ai/new',
             'https://www.w3schools.com/html/default.asp',
             'https://archlinux.org/'
         ]
